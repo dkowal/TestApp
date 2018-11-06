@@ -15,7 +15,7 @@ pipeline {
 
       }
       steps {
-        sh 'mvn test'
+        bat(script: 'mvn test', returnStatus: true)
       }
     }
   }
