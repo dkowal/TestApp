@@ -4,6 +4,10 @@ pipeline {
     stage('Build') {
       steps {
         bat(returnStatus: true, script: 'echo \'hello\'')
+        timestamps() {
+          echo 'plpl'
+        }
+
       }
     }
   }
