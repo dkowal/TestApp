@@ -1,6 +1,5 @@
 def call(Map pipelineParams) {
     pipeline {
-        def workspace = env.WORKSPACE
         agent any
         stages {
             stage("checkout from github") {
@@ -16,9 +15,7 @@ def call(Map pipelineParams) {
                         //bat "groovy first_script.groovy"
                         //bat "groovy second_script.groovy"
                         bat "for %%x in (*.groovy) do groovy %%x"
-                        echo ${workspace}
                     }
-                    echo ${workspace}
                     echo 'step app'
                 }
             }
