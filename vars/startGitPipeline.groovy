@@ -1,13 +1,12 @@
-def call(def gitURL, def dxd) {
+def call(Map pipelineParams) {
     pipeline {
         agent any
         stages {
             stage("checkout from github") {
                 steps {
                     echo "HELLO WORLD FROM EXPRESSION STAGE"
-                    git gitURL
+                    git pipelineParams.gitURL
                 }
-
             }
 
             stage("Run groovy script on DEV") {
