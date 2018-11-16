@@ -15,7 +15,7 @@ def call(Map pipelineParams) {
                         //bat "groovy first_script.groovy"
                         //bat "groovy second_script.groovy"
                         bat "@echo off"
-                        bat "for %%x in (*.txt) do type %%x"
+                        bat "for %%x in (*.groovy) do groovy %%x"
                     }
                     echo 'step app'
                 }
