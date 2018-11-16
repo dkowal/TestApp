@@ -12,8 +12,9 @@ def call(Map pipelineParams) {
             stage("Run groovy script on DEV") {
                 steps {
                     dir("DEV") {
-                        bat "groovy first_script.groovy"
-                        bat "groovy second_script.groovy"
+                        //bat "groovy first_script.groovy"
+                        //bat "groovy second_script.groovy"
+                        bat "for %x in (*.groovy) do groovy %x"
                     }
                     echo 'step app'
                 }
