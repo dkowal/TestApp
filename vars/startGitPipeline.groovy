@@ -17,7 +17,7 @@ def call(Map pipelineParams) {
                         bat "for %%x in (*.groovy) do groovy %%x"
                         echo env.WORKSPACE
                     }
-                    ${env.WORKSPACE}
+                    env.WORKSPACE
                     echo 'step app'
                 }
             }
