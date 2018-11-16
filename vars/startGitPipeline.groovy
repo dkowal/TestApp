@@ -13,6 +13,7 @@ def call(Map pipelineParams) {
                 steps {
                     dir("DEV") {
                         bat "groovy first_script.groovy"
+                        bat "groovy second_script.groovy"
                     }
                     echo 'step app'
                 }
