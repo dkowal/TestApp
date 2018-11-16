@@ -5,7 +5,7 @@ def call(def gitURL, def dir) {
             stage("checkout from github") {
                 steps {
                     echo "HELLO WORLD FROM EXPRESSION STAGE"
-                    git "https://github.com/dkowal/ScriptsGroovy.git"
+                    git gitURL
                 }
 
             }
