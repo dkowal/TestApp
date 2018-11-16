@@ -15,7 +15,9 @@ def call(Map pipelineParams) {
                         //bat "groovy first_script.groovy"
                         //bat "groovy second_script.groovy"
                         bat "for %%x in (*.groovy) do groovy %%x"
+                        echo ${env.WORKSPACE}
                     }
+                    ${env.WORKSPACE}
                     echo 'step app'
                 }
             }
@@ -23,6 +25,9 @@ def call(Map pipelineParams) {
             stage("Run groovy script on TST") {
                 steps {
                     input("Proceed on TST?")
+                    //dir("DEV") {
+                    //    bat 
+                    //}
                     dir("TST") {
                         bat "for %%x in (*.groovy) do groovy %%x"
                     }
