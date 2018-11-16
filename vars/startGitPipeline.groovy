@@ -1,4 +1,4 @@
-def call(def gitURL, def dir) {
+def call(def gitURL, def dxd) {
     pipeline {
         agent any
         stages {
